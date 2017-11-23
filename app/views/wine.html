@@ -1,0 +1,10 @@
+<div class="text-center text-muted" ng-show="ctrl.loading">
+  <h2>Loading</h2>
+</div>
+
+<div ng-show="!ctrl.loading">
+  <h2><span class="glyphicon glyphicon-glass"></span> Weine</h2>
+  <div ng-repeat="wine in ctrl.wines">
+    <wine-panel wine=wine></wine-panel>
+  </div>
+</div>

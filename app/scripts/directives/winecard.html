@@ -1,0 +1,18 @@
+<div>
+  <p>
+    <h3>{{ctrl.wine.id}} {{ctrl.wine.name}} {{ctrl.wine.wineColor.wineColorEnum}}</h3>
+  </p>
+
+  <p>
+    <span><b>A</b>: {{ctrl.wine.alcohol}}</span>
+    <span><b>RZ</b>: {{ctrl.wine.restSugar}}</span>
+    <span><b>S</b>: {{ctrl.wine.acid}}</span>
+  </p>
+
+  <div>
+    <p ng-repeat="berry in ctrl.wine.berries">
+      {{berry.name}}
+    </p>
+  </div>
+</div>
+

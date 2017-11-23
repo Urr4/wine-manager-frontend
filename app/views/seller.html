@@ -1,0 +1,10 @@
+<div class="text-center text-muted" ng-show="ctrl.loading">
+  <h2>Loading</h2>
+</div>
+
+<div ng-show="!ctrl.loading">
+  <h2><span class="glyphicon glyphicon-leaf"></span> Winzer</h2>
+  <div ng-repeat="seller in ctrl.sellers">
+    <seller-field seller=seller></seller-field>
+  </div>
+</div>

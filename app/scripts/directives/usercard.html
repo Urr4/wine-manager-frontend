@@ -1,0 +1,11 @@
+<div ng-click="ctrl.switch()" class="jumbotron">
+
+  <h3>{{ctrl.user.name}}</h3>
+
+  <div ng-show="!ctrl.collapsed">
+    <div ng-repeat="wine in ctrl.user.likedWines">
+      <wine-slot wine=wine user=ctrl.user></wine-slot>
+    </div>
+  </div>
+
+</div>

@@ -19,11 +19,25 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when('/users', {
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl',
+        controllerAs: 'ctrl'
+      })
+      .when('/sellers', {
+        templateUrl: 'views/seller.html',
+        controller: 'SellerCtrl',
+        controllerAs: 'ctrl'
+      })
+      .when('/wine', {
+        templateUrl: 'views/wine.html',
+        controller: 'WineCtrl',
+        controllerAs: 'ctrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/wine'
       });
-  });
+  })
+  .config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('');
+  }]);
