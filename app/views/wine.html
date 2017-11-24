@@ -3,7 +3,15 @@
 </div>
 
 <div ng-show="!ctrl.loading">
-  <h2><span class="glyphicon glyphicon-glass"></span> Weine</h2>
+  <h2>
+    <span class="glyphicon glyphicon-glass"></span> Weine
+    <span class="btn btn-lg btn-primary pull-right glyphicon glyphicon-glass" ng-click="ctrl.switchAddWine()"></span>
+  </h2>
+
+  <div ng-if="ctrl.addWine">
+    <wine-form></wine-form>
+  </div>
+
   <div ng-repeat="wine in ctrl.wines">
     <wine-panel wine=wine></wine-panel>
   </div>

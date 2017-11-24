@@ -19,7 +19,7 @@ angular.module('wineFrontendApp')
         self.loading=false;
       }, function error(response) {
         $log.error(response);
-        $window.alert("Konnte Winzer nicht laden");
+        $window.alert('Konnte Winzer nicht laden');
         self.loading=false;
       });
     };
@@ -34,7 +34,7 @@ angular.module('wineFrontendApp')
         self.loading=false;
       }, function error(response) {
         $log.error(response);
-        $window.alert("Konnte Winzer nicht laden");
+        $window.alert('Konnte Winzer nicht laden');
         self.loading=false;
       });
     };

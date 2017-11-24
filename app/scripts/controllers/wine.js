@@ -3,8 +3,9 @@
 angular.module('wineFrontendApp')
   .controller('WineCtrl', function ($http, $window, $log) {
 
+    this.addWine = false;
+
     this.wines = [];
-    this.currentWine = null;
     this.loading = false;
 
     var self = this;
@@ -19,24 +20,13 @@ angular.module('wineFrontendApp')
         self.loading = false;
       }, function error(response) {
         $log.error(response);
-        $window.alert("Konnte Weine nicht laden");
+        $window.alert('Konnte Weine nicht laden');
         self.loading = false;
       });
     };
 
-    this.loadWineById = function(id) {
-      self.loading = true;
-      $http({
-        method: 'GET',
-        url: 'http://localhost:8080/wines/'+id
-      }).then(function success(response) {
-        self.currentWine = response.data;
-        self.loading = false;
-      }, function error(response) {
-        $log.error(response);
-        $window.alert("Konnte Weine nicht laden");
-        self.loading = false;
-      });
+    this.switchAddWine = function(){
+      this.addWine = !this.addWine;
     };
 
     this.loadAllWines();

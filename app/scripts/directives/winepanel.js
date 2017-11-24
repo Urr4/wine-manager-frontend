@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('wineFrontendApp')
   .directive('winePanel', function(){
     return {
@@ -11,6 +13,6 @@ angular.module('wineFrontendApp')
       bindToController: true
     };
   })
-  .controller('WinePanelCtrl', function ($log) {
+  .controller('WinePanelCtrl', function () {
 
   });

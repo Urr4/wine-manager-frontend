@@ -17,6 +17,12 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .constant('wineColors', [
+    {name:'RED'},
+    {name:'WHITE'},
+    {name:'ROSE'}
+    ]
+  )
   .config(function ($routeProvider) {
     $routeProvider
       .when('/users', {

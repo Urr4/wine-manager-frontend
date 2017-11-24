@@ -1,10 +1,15 @@
-<div ng-click="ctrl.switch()" class="jumbotron">
+<div class="jumbotron">
 
-  <h3>{{ctrl.user.name}}</h3>
+  <h3>
+    <span>{{ctrl.user.name}}</span>
+    <span class = "glyphicon glyphicon-glass pull-right" ng-click="ctrl.switch()"></span>
+  </h3>
+
+  <div class="hspace-small"></div>
 
   <div ng-show="!ctrl.collapsed">
     <div ng-repeat="wine in ctrl.user.likedWines">
-      <wine-slot wine=wine user=ctrl.user></wine-slot>
+      <wine-user-slot wine=wine user=ctrl.user></wine-user-slot>
     </div>
   </div>
 

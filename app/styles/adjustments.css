@@ -1,0 +1,19 @@
+.right {
+  text-align: right;
+}
+
+.hspace-small {
+  padding-bottom: 10px;
+}
+
+.hspace-big {
+  padding-bottom: 70px;
+}
+
+.input-addon-add {
+  min-width:130px;
+}
+
+.input-addon-big {
+  min-width:300px;
+}

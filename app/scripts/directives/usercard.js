@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('wineFrontendApp')
-  .directive('userField', function(){
+  .directive('userCard', function(){
     return {
       restrict: 'E',
       templateUrl: 'scripts/directives/usercard.html',
-      controller: 'UserFieldCtrl',
+      controller: 'UserCardCtrl',
       controllerAs: 'ctrl',
       scope: {
         user: '='
@@ -13,12 +13,12 @@ angular.module('wineFrontendApp')
       bindToController: true
     };
   })
-  .controller('UserFieldCtrl', function () {
+  .controller('UserCardCtrl', function () {
 
     this.collapsed = true;
 
     this.switch = function(){
       this.collapsed = !this.collapsed;
-    }
+    };
 
   });

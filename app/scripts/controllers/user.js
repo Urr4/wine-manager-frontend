@@ -18,7 +18,7 @@ angular.module('wineFrontendApp')
         self.loading = false;
       }, function error(response){
         $log.error(response);
-        $window.alert("Konnte Personen nicht laden");
+        $window.alert('Konnte Personen nicht laden');
         self.loading = false;
       });
     };

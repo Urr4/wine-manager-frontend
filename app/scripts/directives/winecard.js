@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('wineFrontendApp')
-  .directive('wineField', function(){
+  .directive('wineCard', function(){
     return {
       restrict: 'E',
       templateUrl: 'scripts/directives/winecard.html',
-      controller: 'WineFieldCtrl',
+      controller: 'WineCardCtrl',
       controllerAs: 'ctrl',
       scope: {
         wine: '='
@@ -13,6 +13,6 @@ angular.module('wineFrontendApp')
       bindToController: true
     };
   })
-  .controller('WineFieldCtrl', function ($log) {
+  .controller('WineCardCtrl', function () {
 
   });
