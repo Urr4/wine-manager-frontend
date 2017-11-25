@@ -19,7 +19,7 @@ angular.module('wineFrontendApp')
     this.addWine = false;
     this.emailRequest = new CreateEmailRequest([]);
 
-    this.switch = function(){
+    this.switchShowWines = function(){
       this.expanded = !this.expanded;
     };
 
@@ -40,10 +40,6 @@ angular.module('wineFrontendApp')
 
     this.switchAddWine = function(){
       this.addWine = !this.addWine;
-    };
-
-    this.saveWine = function(){
-
     };
 
   });

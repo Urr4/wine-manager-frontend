@@ -12,7 +12,7 @@
     <wine-form></wine-form>
   </div>
 
-  <div ng-repeat="wine in ctrl.wines">
+  <div ng-if="!ctrl.addWine" ng-repeat="wine in ctrl.wines">
     <wine-panel wine=wine></wine-panel>
   </div>
 </div>

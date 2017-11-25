@@ -1,34 +1,37 @@
-<div class="jumbotron">
-
+<div>
+  <div class="jumbotron">
     <h3>
       <span>{{ctrl.seller.name}}</span>
-      <span class="glyphicon glyphicon-glass" ng-click="ctrl.switch()"></span>
+      <span data-toggle="tooltip" title="List Wines" class="glyphicon glyphicon-glass"
+            ng-click="ctrl.switchShowWines()"></span>
     </h3>
 
+    <div>
+      <p><b>Address</b>: {{ctrl.seller.address}}</p>
+      <p><b>Email</b>: {{ctrl.seller.email}}</p>
+    </div>
+
+    <div class="hspace-small"></div>
+    <span class="pull-right">
+      <button class="glyphicon glyphicon-envelope btn btn-primary btn-sm" ng-click="ctrl.openEmailModal()"></button>
+    </span>
+    <span class="pull-left" ng-show="!ctrl.addWine">
+      <button class="glyphicon glyphicon-plus btn btn-primary btn-sm" ng-click="ctrl.switchAddWine()"></button>
+    </span>
+    <span class="pull-left" ng-show="ctrl.addWine">
+      <button class="glyphicon glyphicon-minus btn btn-primary btn-sm" ng-click="ctrl.switchAddWine()"></button>
+    </span>
+  </div>
+
   <div>
-    <p><b>Address</b>: {{ctrl.seller.address}}</p>
-    <p><b>Email</b>: {{ctrl.seller.email}}</p>
+    <div ng-show="ctrl.expanded" ng-repeat="wine in ctrl.seller.wines">
+        <wine-seller-slot wine=wine order=ctrl.emailRequest.winePurchases></wine-seller-slot>
+    </div>
+    <div class="hspace-small"></div>
+
+    <div ng-if="ctrl.addWine">
+      <wine-form seller="ctrl.seller"></wine-form>
+      <div class="hspace-big"></div>
+    </div>
   </div>
-
-  <div ng-show="ctrl.expanded" ng-repeat="wine in ctrl.seller.wines">
-      <wine-seller-slot wine=wine order=ctrl.emailRequest.winePurchases></wine-seller-slot>
-  </div>
-
-  <div class="hspace-small"></div>
-
-  <span class="pull-right">
-    <button class="glyphicon glyphicon-envelope btn btn-primary btn-sm" ng-click="ctrl.openEmailModal()"></button>
-  </span>
-  <span class="pull-left" ng-show="!ctrl.addWine">
-    <button class="glyphicon glyphicon-plus btn btn-primary btn-sm" ng-click="ctrl.switchAddWine()"></button>
-  </span>
-  <span class="pull-left" ng-show="ctrl.addWine">
-    <button class="glyphicon glyphicon-minus btn btn-primary btn-sm" ng-click="ctrl.switchAddWine()"></button>
-  </span>
-
-  <div ng-if="ctrl.addWine">
-    <div class="hspace-big"></div>
-    <wine-form seller="ctrl.seller"></wine-form>
-  </div>
-
 </div>

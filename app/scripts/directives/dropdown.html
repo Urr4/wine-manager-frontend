@@ -1,0 +1,12 @@
+<div>
+  <a ng-class="ctrl.open ? 'btn btn-success input-addon-add' : 'btn btn-primary input-addon-add'"
+     ng-click="ctrl.toggle()">{{ctrl.getLabel()}}<span class="caret"></span></a>
+  <div ng-show="ctrl.open">
+    <div ng-repeat="obj in ctrl.list">
+        <a ng-click="ctrl.select(obj)"
+           ng-class="ctrl.isSelected(obj) ? 'btn btn-primary input-addon-add' : 'btn btn-default input-addon-add'">
+            {{obj.name}}
+        </a>
+    </div>
+  </div>
+</div>

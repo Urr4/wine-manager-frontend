@@ -13,7 +13,7 @@ angular.module('wineFrontendApp')
       bindToController: true
     };
   })
-  .controller('UserCardCtrl', function () {
+  .controller('UserCardCtrl', function ($http, $window) {
 
     this.collapsed = true;
 

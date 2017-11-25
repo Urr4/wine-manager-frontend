@@ -4,10 +4,14 @@ angular.module('wineFrontendApp')
   .controller('SellerCtrl', function ($http, $window, $log) {
 
     this.sellers = [];
-    this.currentSeller = null;
+    this.addSeller = false;
     this.loading = false;
 
     var self = this;
+
+    this.switchAddSeller = function(){
+      this.addSeller = !this.addSeller;
+    };
 
     this.loadAllSellers = function() {
       self.loading=true;

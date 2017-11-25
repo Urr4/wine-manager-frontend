@@ -22,27 +22,27 @@
   <div class="input-group">
     <label for="size" class="input-group-addon input-addon-add">Flaschengröße</label>
     <input class="form-control right" type="number" step="0.1" id="size" placeholder="Größe der Flasche in l"
-           ng-model="ctrl.newWine.size">
+           ng-model="ctrl.newWine.bottleSize">
   </div>
   <div class="input-group">
     <label for="price" class="input-group-addon input-addon-add">Preis</label>
     <input class="form-control right" type="number" step="0.01" id="price" placeholder="Preis in €"
            ng-model="ctrl.newWine.price" required>
   </div>
-  <div class="input-group">
-    <select class="selectpicker">
-      <option class="form-control" ng-repeat="color in ctrl.colors">{{color.wineColorEnum}}</option>
-    </select>
+
+  <div id="buttons">
+    <span class="col-sm-4">
+      <dropdown label=Farbe list=ctrl.colors selected="ctrl.selectedColor"></dropdown>
+    </span>
+
+    <span class="col-sm-4">
+      <dropdown label=Beeren list=ctrl.berries  selected="ctrl.selectedBerries" multiple=true max=3></dropdown>
+    </span>
+
+    <span class="col-sm-4" ng-show="ctrl.seller==null">
+      <dropdown label=Winzer list=ctrl.sellers  selected="ctrl.selectedSeller"></dropdown>
+    </span>
   </div>
-  <div class="input-group">
-    <select class="selectpicker" multiple>
-      <option class="" ng-repeat="berry in ctrl.berries">{{berry.name}}</option>
-    </select>
-  </div>
-  <div ng-show="ctrl.seller==null">
-    TODO Dropdown from Winzer
-  </div>
-  <div class="hspace-small"></div>
-  <input type="submit" value="Ok" class="btn btn-primary">
-  <div class="hspace-small"></div>
+
+    <input type="submit" value="Ok" class="btn btn-success col-sm-12">
 </form>

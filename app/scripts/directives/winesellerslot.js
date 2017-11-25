@@ -14,8 +14,9 @@ angular.module('wineFrontendApp')
       bindToController: true
     };
   })
-  .controller('WineSellerSlotCtrl', function () {
+  .controller('WineSellerSlotCtrl', function ($scope, $window) {
 
     this.count = 0;
+    this.text = 'test';
 
   });
