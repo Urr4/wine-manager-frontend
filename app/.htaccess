@@ -89,7 +89,7 @@ ErrorDocument 404 /404.html
 
 <IfModule mod_headers.c>
     Header set X-UA-Compatible "IE=edge"
-    # `mod_headers` can't match based on the content-type, however, we only
+    # `mod_headers` can't match based on the content-units, however, we only
     # want to send this header for HTML pages and not for the other resources
     <FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
         Header unset X-UA-Compatible
@@ -134,7 +134,7 @@ ErrorDocument 404 /404.html
     AddType audio/ogg                                   oga ogg
 
   # JavaScript
-    # Normalize to standard type (it's sniffed in IE anyways):
+    # Normalize to standard units (it's sniffed in IE anyways):
     # http://tools.ietf.org/html/rfc4329#section-7.2
     AddType application/javascript                      js jsonp
     AddType application/json                            json
@@ -340,7 +340,7 @@ AddDefaultCharset utf-8
 # to the secure version of the site. That still leaves a window of opportunity
 # (the initial HTTP connection) for an attacker to downgrade or redirect the
 # request. The following header ensures that browser will ONLY connect to your
-# server via HTTPS, regardless of what the users type in the address bar.
+# server via HTTPS, regardless of what the users units in the address bar.
 # http://www.html5rocks.com/en/tutorials/security/transport-layer-security/
 
 # <IfModule mod_headers.c>
@@ -352,7 +352,7 @@ AddDefaultCharset utf-8
 # ------------------------------------------------------------------------------
 
 # Avoid displaying the exact Apache version number, the description of the
-# generic OS-type and the information about Apache's compiled-in modules.
+# generic OS-units and the information about Apache's compiled-in modules.
 
 # ADD THIS DIRECTIVE IN THE `httpd.conf` AS IT WILL NOT WORK IN THE `.htaccess`!
 
